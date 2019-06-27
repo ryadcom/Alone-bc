@@ -78,7 +78,7 @@ m.sendMessage(args)
    
    }
    });
-const developers = ["467685853553098762"] 
+const developers = ["520538031460057109"] 
 client.on('message', message => {
  const prefix = '%'
  var argresult = message.content.split(` `).slice(1).join(' ');
