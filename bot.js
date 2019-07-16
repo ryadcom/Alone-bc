@@ -1,10 +1,10 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "%"
-var adminprefix = '%'
+var prefix = "/"
+var adminprefix = '/'
 
 client.on("message", message => {
-    if (message.content.startsWith("%bc")) {
+    if (message.content.startsWith("/bc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -16,7 +16,7 @@ client.on("message", message => {
   };
   });
 
-  var prefix = "%";
+  var prefix = "/";
 
   client.on("message", message => {
   
@@ -59,7 +59,7 @@ m.sendMessage(args)
 });
 
   client.on('message', msg => {
-    if(msg.content === '%helpbc')
+    if(msg.content === '/helpbc')
     msg.reply('Check Your DM :white_check_mark:')
   });
   
@@ -70,44 +70,12 @@ m.sendMessage(args)
          .setColor("#00FF00")
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**Help|هيلب
-       %bc | لأرسال برود كاست للكل
-       %obc  |  لأرسال برود كاست للأونلاين
-       %adminbc | برودكاست عادي
+       /bc | لأرسال برود كاست للكل
+       /obc  |  لأرسال برود كاست للأونلاين
+       /adminbc | برودكاست عادي
        ** `)
    message.author.sendEmbed(embed)
    
    }
    });
-const developers = ["520538031460057109"] 
-client.on('message', message => {
- const prefix = '%'
- var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!developers.includes(message.author.id)) return;
-     
-  if (message.content.startsWith(prefix + 'ply')) {
-    client.user.setGame(argresult);
-      message.channel.send(`**✅   ${argresult}**`)
-  } else  
-  if (message.content.startsWith(prefix + 'wt')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else
-  if (message.content.startsWith(prefix + 'ls')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else
-  if (message.content.startsWith(prefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/idk");
-      message.channel.send(`**✅**`)
-  }
-  if (message.content.startsWith(prefix + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.send(`Changing The Name To ..**${argresult}** `)
-} else
-if (message.content.startsWith(prefix + 'setavatar')) {
-  client.user.setAvatar(argresult);
-    message.channel.send(`Changing The Avatar To :**${argresult}** `);
-}
-});
-
 client.login(process.env.BOT_TOKEN);
